@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cards Faria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body ng-app="CartasFaria">
+    <div class="container" ng-controller="MainController as mainCtrl">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12"
+                ng-repeat="card in mainCtrl.cards">
+                <div>{{card.name}}</div>
+                <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/cartas-faria.js"></script>
+</body>
+</html>
