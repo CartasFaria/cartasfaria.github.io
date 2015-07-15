@@ -7,6 +7,10 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <style text="text/css">
+        .ng-cloak {
+            display: none;
+        }
+
         .card {
             position: relative;
             margin-bottom: 20px;
@@ -31,10 +35,10 @@
     </style>
 </head>
 <body ng-app="CartasFaria">
-    <div class="container" ng-controller="MainController as mainCtrl">
+    <div class="container ng-cloak" ng-controller="MainController as mainCtrl">
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-12"
-                ng-repeat="card in mainCtrl.cards | filter: { color: mainCtrl.selectedColor }">
+                ng-repeat="card in mainCtrl.cards | filter: { color: mainCtrl.selectedColor } | orderBy:-price">
                 <div class="card">
                     <img class="center-block" ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
                     <div class="card-info card-price">
