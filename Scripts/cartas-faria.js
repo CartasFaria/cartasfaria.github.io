@@ -62,6 +62,8 @@
                             card[columns[columnIndex]] = cardData[columnIndex];
                         }
 
+                        card.price = parseFloat(card.price);
+
                         $this.cards.push(card);
                     }
                 }
