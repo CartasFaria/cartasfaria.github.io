@@ -26,15 +26,19 @@
                 var allCardsData = data.split('\n');
                 for (var i = 1; i < allCardsData.length; i++) {
                     var cardData = allCardsData[i].split('\t');
-                    var card = {
-                        id: cardData[0],
-                        name: cardData[1],
-                        color: cardData[2],
-                        price: cardData[3],
-                        qty: cardData[4]
-                    };
-                    console.log(card);
-                    $this.cards.push(card);
+
+                    if (cardData[0]) {
+
+                        var card = {
+                            id: cardData[0],
+                            name: cardData[1],
+                            color: cardData[2],
+                            price: cardData[3],
+                            qty: cardData[4]
+                        };
+                        
+                        $this.cards.push(card);
+                    }
                 }
                 
             });
