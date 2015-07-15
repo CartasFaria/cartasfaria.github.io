@@ -15,7 +15,10 @@
 
     app.controller("MainController", function (service) {
         var $this = this;
+
         this.cards = [];
+        this.selectedColor = '';
+
 
         // Carrega as cartas
         service.getCards()

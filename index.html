@@ -6,19 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <style text="text/css">
+        .card {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .card-info {
+            position: absolute;
+            width: 100%;
+            opacity: 0.75;
+            -webkit-text-stroke: 1px black;
+            color: white;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .card-price {
+            top: 15px;
+        }
+        
+        .card-qty {
+            bottom: 5px;
+        }
+    </style>
 </head>
 <body ng-app="CartasFaria">
     <div class="container" ng-controller="MainController as mainCtrl">
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-12"
-                ng-repeat="card in mainCtrl.cards">
-                <div>{{card.name}}</div>
-                <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
+                ng-repeat="card in mainCtrl.cards | filter: { color: mainCtrl.selectedColor }">
+                <div class="card">
+                    <img class="center-block" ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
+                    <div class="card-info card-price">
+                        <h1 class="text-center"><strong>{{card.price | currency}}</strong></h1>
+                    </div>
+                    <div class="card-info card-qty">
+                        <h3 class="text-center"><strong>Qtde: {{card.qty}}x</strong></h3>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/i18n/angular-locale_pt-br.js"></script>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/cartas-faria.js"></script>
