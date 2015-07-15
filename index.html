@@ -39,7 +39,10 @@
                         <div class="card-image">
                             <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" />
                         </div>
+                        <span class="card-additional-info" ng-show="card.additionalInfo">{{card.additionalInfo}}</span>
                     </div>
+
+                        
                     <div class="card-info card-price">
                         <span>{{card.price | currency}}</span>
                     </div>

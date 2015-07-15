@@ -48,20 +48,20 @@
         // Carrega as cartas
         service.getCards()
             .success(function (data) {
+
                 var allCardsData = data.split('\n');
+                var columns = allCardsData[0].split('\t');
+
                 for (var i = 1; i < allCardsData.length; i++) {
                     var cardData = allCardsData[i].split('\t');
 
-                    if (cardData[0]) {
+                    var card = {};
 
-                        var card = {
-                            id: cardData[0],
-                            name: cardData[1],
-                            color: cardData[2],
-                            price: cardData[3],
-                            qty: cardData[4]
-                        };
-                        
+                    if (cardData[0]) {
+                        for (var columnIndex = 0; columnIndex < columns.length; columnIndex++) {
+                            card[columns[columnIndex]] = cardData[columnIndex];
+                        }
+
                         $this.cards.push(card);
                     }
                 }
