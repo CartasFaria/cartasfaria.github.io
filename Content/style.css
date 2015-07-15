@@ -2,24 +2,28 @@
     display: none;
 }
 
+.main {
+    max-width: 95%;
+}
+
 body {
     background-color: #2F2F2F;
 }
 
 .container {
-    background-color: 2F2F2F;
+    background-color: #2F2F2F;
 }
 
 .card {
-    padding-top: 20px;
+    padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .card-image {
-    width: 90%;
+    width: 100%;
 }
 
 .card-info {

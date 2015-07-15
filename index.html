@@ -9,9 +9,9 @@
     <link href="Content/style.css" rel="stylesheet" />
 </head>
 <body ng-app="CartasFaria">
-    <div class="container ng-cloak" ng-controller="MainController as mainCtrl">
+    <div class="main container-fluid ng-cloak" ng-controller="MainController as mainCtrl">
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12"
+            <div class="col-md-3 col-sm-6 col-xs-12"
                 ng-repeat="card in mainCtrl.cards | filter: { color: mainCtrl.selectedColor } | orderBy:-price">
                 <div class="card">
                     <img class="card-image center-block" ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
