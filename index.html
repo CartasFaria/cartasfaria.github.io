@@ -9,10 +9,31 @@
     <link href="Content/style.css" rel="stylesheet" />
 </head>
 <body ng-app="CartasFaria">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Faria Cards</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/?color=B">Cartas pretas</a></li>
+                    <li><a href="/?color=W">Cartas brancas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container ng-cloak" ng-controller="MainController as mainCtrl">
         <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12"
-                 ng-repeat="card in mainCtrl.cards | filter: { color: mainCtrl.selectedColor } | orderBy:-price">
+                 ng-repeat="card in mainCtrl.cards | filter: mainCtrl.filterCards | orderBy:-price">
                 <div class="card">
                     <div class="card-image-wrapper">
                         <div class="card-image">

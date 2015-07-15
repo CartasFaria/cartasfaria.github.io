@@ -3,11 +3,8 @@
 }
 
 body {
-    background-color: #2F2F2F;
-}
-
-.container {
-    background-color: #2F2F2F;
+    background-color: #525252;
+    padding-top: 70px;
 }
 
 .card {
@@ -23,7 +20,7 @@ body {
     width: 100%;
     opacity: 1;
     font-weight: bold;
-    color: #2F2F2F;
+    color: #000000;
 }
 
 .card-price {
