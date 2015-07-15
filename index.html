@@ -16,10 +16,10 @@
                 <div class="card">
                     <img class="card-image center-block" ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" alt="{{card.name}}" />
                     <div class="card-info card-price">
-                        <h1 class="text-center"><strong>{{card.price | currency}}</strong></h1>
+                        <span>{{card.price | currency}}</span>
                     </div>
                     <div class="card-info card-qty">
-                        <h3 class="text-center"><strong>Qtde: {{card.qty}}x</strong></h3>
+                        <span>Qtde: {{card.qty}}x</span>
                     </div>
                 </div>
             </div>

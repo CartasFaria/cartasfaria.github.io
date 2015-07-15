@@ -7,31 +7,33 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: 2F2F2F;
 }
 
 .card {
-    position: relative;
+    padding-top: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .card-image {
-    width: 100%;
+    width: 90%;
 }
 
 .card-info {
-    position: absolute;
+    text-align:center;
     width: 100%;
     opacity: 1;
-    color: white;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold;
+    color: #2F2F2F;
 }
 
 .card-price {
-    top: 10%;
+    font-size: 3em;
 }
 
 .card-qty {
-    bottom: 0%;
+    font-size: 2em;
 }
