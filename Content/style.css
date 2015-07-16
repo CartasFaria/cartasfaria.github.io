@@ -23,7 +23,7 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    color: white;
+    color: #ff0000;
     text-shadow: 3px 3px 0 #000,
     /* Simulated effect for Firefox and Opera
        and nice enhancement for WebKit */
