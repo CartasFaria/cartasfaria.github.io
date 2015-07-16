@@ -2,9 +2,20 @@
     display: none;
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
 body {
     background-color: #525252;
     padding-top: 70px;
+}
+
+.page-title {
+    font-weight: bold;
+    font-size: 5em;
 }
 
 .card {
@@ -40,10 +51,12 @@ body {
 
 .card-price {
     font-size: 3em;
+    font-weight: 900;
 }
 
 .card-qty {
     font-size: 2em;
+    font-weight: 700;
 }
 
 .card-image-wrapper {
