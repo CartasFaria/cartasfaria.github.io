@@ -76,7 +76,7 @@
             }
 
             if ($routeParams.category) {
-                return card.category == $routeParams.category;
+                return card.category.indexOf($routeParams.category) >= 0;
             }
 
             return true;
@@ -99,6 +99,7 @@
                             card[columns[columnIndex]] = cardData[columnIndex];
                         }
 
+                        card.category = card.category.split(',');
                         card.price = parseFloat(card.price);
 
                         $scope.cards.push(card);
