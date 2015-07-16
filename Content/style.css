@@ -14,6 +14,7 @@ body {
 }
 
 .page-title {
+    color: white;
     font-weight: bold;
     font-size: 5em;
 }
