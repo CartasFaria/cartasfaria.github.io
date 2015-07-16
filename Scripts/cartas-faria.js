@@ -8,18 +8,6 @@
             return $http.get("//crossorigin.me/https://docs.google.com/spreadsheets/d/1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o/pub?gid=0&single=true&output=tsv");
         };
 
-        service.queryStringToJSON = function () {
-            var pairs = location.search.slice(1).split('&');
-
-            var result = {};
-            pairs.forEach(function (pair) {
-                pair = pair.split('=');
-                result[pair[0]] = decodeURIComponent(pair[1] || '');
-            });
-
-            return JSON.parse(JSON.stringify(result));
-        };
-
         return service;
     });
 
@@ -45,7 +33,6 @@
         // enable http caching
         $httpProvider.defaults.cache = true;
     }]);
-
 
     app.controller("CardsController", function ($scope, $routeParams, service) {
 

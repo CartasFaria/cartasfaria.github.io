@@ -1,7 +1,12 @@
 ﻿<div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12"
-         ng-repeat="card in cards | filter: filterCards | orderBy: '-price'">
+         ng-repeat="card in filteredCards = (cards | filter: filterCards | orderBy: ['-price', 'name'])">
         <div class="card">
+
+            <div class="card-info">
+                <span>{{card.name}}</span>
+            </div>
+
             <div class="card-image-wrapper">
                 <div class="card-image">
                     <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" />
@@ -17,4 +22,6 @@
             </div>
         </div>
     </div>
+    <h2 ng-show="!cards.length">Carregando...</h2>
+    <h2 ng-show="cards.length && !filteredCards.length">Não existem cartas nessa categoria</h2>
 </div>
