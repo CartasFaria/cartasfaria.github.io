@@ -8,7 +8,7 @@
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
 </head>
-<body ng-app="CartasFaria">
+<body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -19,42 +19,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Faria Cards</a>
+                <a class="navbar-brand" href="#/cards">Faria Cards</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/?color=B">Cartas pretas</a></li>
-                    <li><a href="/?color=W">Cartas brancas</a></li>
+                    <li><a href="#/cards/color/B">Cartas pretas</a></li>
+                    <li><a href="#/cards/color/W">Cartas brancas</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <div class="container ng-cloak" ng-controller="MainController as mainCtrl">
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12"
-                 ng-repeat="card in mainCtrl.cards | filter: mainCtrl.filterCards | orderBy: '-price'">
-                <div class="card">
-                    <div class="card-image-wrapper">
-                        <div class="card-image">
-                            <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" />
-                        </div>
-                        <span class="card-additional-info" ng-show="card.additionalInfo" ng-style="{ color: card.additionalInfoColor }">{{card.additionalInfo}}</span>
-                    </div>
-
-
-                    <div class="card-info card-price">
-                        <span>{{card.price | currency}}</span>
-                    </div>
-                    <div class="card-info card-qty">
-                        <span>Qtde: {{card.qty}}x</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container ng-cloak" ng-app="CartasFaria">
+        <div ng-view></div>
     </div>
 
     <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/i18n/angular-locale_pt-br.js"></script>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>

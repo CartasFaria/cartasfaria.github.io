@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12"
+         ng-repeat="card in cards | filter: filterCards | orderBy: '-price'">
+        <div class="card">
+            <div class="card-image-wrapper">
+                <div class="card-image">
+                    <img ng-src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{card.id}}&type=card" />
+                </div>
+                <span class="card-additional-info" ng-show="card.additionalInfo" ng-style="{ color: card.additionalInfoColor }">{{card.additionalInfo}}</span>
+            </div>
+
+            <div class="card-info card-price">
+                <span>{{card.price | currency}}</span>
+            </div>
+            <div class="card-info card-qty">
+                <span>Qtde: {{card.qty}}x</span>
+            </div>
+        </div>
+    </div>
+</div>

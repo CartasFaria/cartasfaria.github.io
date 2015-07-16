@@ -23,23 +23,43 @@
         return service;
     });
 
-    var app = angular.module("CartasFaria", ["services"]);
+    var app = angular.module("CartasFaria", ["ngRoute", "services"]);
 
-    app.controller("MainController", function (service) {
-        var $this = this;
+    app.config(['$routeProvider',
+        function ($routeProvider) {
+        $routeProvider.
+        when('/cards', {
+            templateUrl: 'partials/cards.html',
+            controller: 'CardsController'
+        }).
+        when('/cards/color/:color', {
+            templateUrl: 'partials/cards.html',
+            controller: 'CardsController'
+        }).
+        otherwise({
+            redirectTo: '/cards'
+        });
+    }]);
 
-        this.cards = [];
-        this.selectedColor = '';
-        this.filter = service.queryStringToJSON();
-        
-        this.filterCards = function (card) {
+    app.config(['$httpProvider', function ($httpProvider) {
+        // enable http caching
+        $httpProvider.defaults.cache = true;
+    }]);
 
-            if ($this.filter.cardID) {
-                return card.id == $this.filter.cardID;
+
+    app.controller("CardsController", function ($scope, $routeParams, service) {
+
+        $scope.cards = [];
+        $scope.selectedColor = '';
+                
+        $scope.filterCards = function (card) {
+
+            if ($routeParams.cardID) {
+                return card.id == $routeParams.cardID;
             }
 
-            if ($this.filter.color) {
-                return card.color.indexOf($this.filter.color) >= 0;
+            if ($routeParams.color) {
+                return card.color.indexOf($routeParams.color) >= 0;
             }
 
             return true;
@@ -64,7 +84,7 @@
 
                         card.price = parseFloat(card.price);
 
-                        $this.cards.push(card);
+                        $scope.cards.push(card);
                     }
                 }
                 
