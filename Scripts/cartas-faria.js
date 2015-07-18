@@ -69,6 +69,10 @@
         $scope.categories = {};
         $scope.selectedColor = '';
 
+        if (!$routeParams.category) {
+            $scope.sort = [ "-price", "name" ];
+        }
+
         $scope.filterCards = function (card) {
 
             if ($routeParams.cardID) {
