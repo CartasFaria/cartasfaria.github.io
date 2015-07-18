@@ -43,5 +43,14 @@
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/cartas-faria.js"></script>
+    <script>
+        $(function () {
+            var navMain = $("#navbar");
+
+            navMain.on("click", "a", null, function () {
+                navMain.collapse('hide');
+            });
+        });
+    </script>
 </body>
 </html>
