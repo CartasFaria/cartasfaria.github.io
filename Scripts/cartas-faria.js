@@ -19,17 +19,21 @@
 
     app.config(['$routeProvider',
         function ($routeProvider) {
-        $routeProvider.
-        when('/cards', {
-            templateUrl: 'partials/cards.html',
-            controller: 'CardsController'
-        }).
-        when('/cards/category/:category', {
-            templateUrl: 'partials/cards.html',
-            controller: 'CardsController'
-        }).
-        otherwise({
-            redirectTo: '/cards'
+            $routeProvider.
+                when('/', {
+                    templateUrl: 'partials/home.html',
+                    controller: 'HomeController'
+                }).
+                when('/cards', {
+                    templateUrl: 'partials/cards.html',
+                    controller: 'CardsController'
+                }).
+                when('/cards/category/:category', {
+                    templateUrl: 'partials/cards.html',
+                    controller: 'CardsController'
+                }).
+                otherwise({
+                    redirectTo: '/'
         });
     }]);
 
@@ -38,7 +42,7 @@
         $httpProvider.defaults.cache = true;
     }]);
 
-    app.controller("MenuController", function ($scope, service) {
+    app.controller("HomeController", function ($scope, service) {
         $scope.categories = [];
 
         service.getCategories()
