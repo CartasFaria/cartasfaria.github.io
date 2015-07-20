@@ -86,8 +86,9 @@
             if ($routeParams.category) {
                 return card.category.indexOf($routeParams.category) >= 0;
             }
-
-            return true;
+            else {
+                return card.price;
+            }
         }
 
         // Carrega as cartas
