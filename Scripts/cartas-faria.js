@@ -4,6 +4,10 @@
     factory('service', function ($http) {
         var service = {};
 
+        service.getLastModifiedDate = function () {
+            return $http.head("//spreadsheets.google.com/feeds/list/1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o/od6/public/basic");
+        };
+
         service.getCards = function () {
             return $http.get("//crossorigin.me/https://docs.google.com/spreadsheets/d/1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o/pub?gid=0&single=true&output=tsv");
         };
@@ -43,8 +47,15 @@
     }]);
 
     app.controller("HomeController", function ($scope, service) {
+        $scope.lastModified = null;
         $scope.categories = [];
 
+        service.getLastModifiedDate()
+            .success(function (data, status, headers) {
+                $scope.lastModified = new Date(headers("last-modified"));
+            });
+        
+        
         service.getCategories()
             .success(function (data) {
                 var allCategoriesData = data.split('\n');

@@ -15,8 +15,8 @@
         width: 75%;
     }
     .page-title {
-        font-size: 7.5em;
-}
+        font-size: 5em;
+    }
 }
 
 body {
@@ -25,8 +25,12 @@ body {
     padding-top: 70px;
 }
 
-.page-title {
+.page-title, .page-subtitle {
     color: white;
+}
+
+.last-updated {
+    color: red;
 }
 
 .card {
