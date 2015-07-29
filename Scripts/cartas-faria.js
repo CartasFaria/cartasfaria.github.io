@@ -68,7 +68,7 @@
 
                     if (categoryData[0]) {
                         for (var columnIndex = 0; columnIndex < columns.length; columnIndex++) {
-                            category[columns[columnIndex]] = categoryData[columnIndex];
+                            category[columns[columnIndex].trim()] = categoryData[columnIndex].trim();
                         }
 
                         $scope.categories.push(category);
@@ -116,7 +116,7 @@
 
                     if (cardData[0]) {
                         for (var columnIndex = 0; columnIndex < columns.length; columnIndex++) {
-                            card[columns[columnIndex]] = cardData[columnIndex];
+                            card[columns[columnIndex].trim()] = cardData[columnIndex].trim();
                         }
 
                         card.category = card.category.split(',');
@@ -142,7 +142,7 @@
 
                     if (categoryData[0]) {
                         for (var columnIndex = 0; columnIndex < columns.length; columnIndex++) {
-                            category[columns[columnIndex]] = categoryData[columnIndex];
+                            category[columns[columnIndex].trim()] = categoryData[columnIndex].trim();
                         }
 
                         $scope.categories[category.id] = category;
