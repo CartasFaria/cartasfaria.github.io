@@ -9,11 +9,17 @@
         };
 
         service.getCards = function () {
-            return $http.get("//jsonp.afeld.me/?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dtsv");
+            //return $http.get("//jsonp.afeld.me/?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dtsv");
+            //return $http.get("//cors.io/?u=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dtsv");
+            return $http.get("//crossorigin.me/https://docs.google.com/spreadsheets/d/1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o/pub?gid=0&single=true&output=tsv");
+
         };
 
         service.getCategories = function () {
-            return $http.get("//jsonp.afeld.me/?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D766174211%26single%3Dtrue%26output%3Dtsv");
+            //return $http.get("//jsonp.afeld.me/?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D766174211%26single%3Dtrue%26output%3Dtsv");
+            //return $http.get("//cors.io/?u=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o%2Fpub%3Fgid%3D766174211%26single%3Dtrue%26output%3Dtsv");
+            return $http.get("//crossorigin.me/https://docs.google.com/spreadsheets/d/1T7MpDLrNndOFKDnzEZvG0tFDsphZx6BW7Qg-o4xmr_o/pub?gid=766174211&single=true&output=tsv");
+
         };
 
         return service;
